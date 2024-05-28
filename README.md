@@ -38,5 +38,12 @@ The Room Management System project is designed to handle hotel room operations, 
 - **Interface Segregation Principle**: Interfaces are kept small and specific. IReception provides a specific contract for reception-related operations.
 - **Dependency Inversion Principle**:High-level modules (`Reception`) do not depend on low-level modules (`BookingDAO`), but rather on abstractions (interfaces).
 
+**Java Concepts**:
+- **Generics**: There is a generic type declaration for the inner static abstract class `RoomBuilder`. `T extends RoomBuilder<T>`, here `T` represents the type of the concrete builder and ensures that the type `T` is a subclass of `RoomBuilder<T>`. It enables fluent method chaining by allowing methods in RoomBuilder to return `T`. Here `T` can be `SuiteRoom`, `StandardRoom`, `DeluxeRoom` which extends `Room`.
+
 **File Operations**:
 - Bookings are stored in a CSV file, and the system checks this file for availability before booking. The `BookingDAO` class handles reading and writing to the CSV file, ensuring data persistence.
+
+
+**Demo** <br>
+![img.png](img.png)
