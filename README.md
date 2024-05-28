@@ -13,7 +13,7 @@ The Room Management System project is designed to handle hotel room operations, 
 5. **Add Rooms**: Reception can add new rooms with specific configurations.
 
 **Design Patterns and Principles**:
-- **Singleton Pattern**: Ensures only one instance of the `Reception` class exists.
+- **Singleton Pattern**: Ensures only one instance of the `Reception` class exists. Improved singleton leveraging by using Bill Pugh implemnetaion(static fields are initialized in a thread-safe manner,The reception field in ReceptionHelper is initialized when the class is loaded, which is handled by the Java ClassLoader) making it simple, performant and thread safe.
 - **Builder Pattern**: Facilitates the creation of complex `Room` objects with various amenities and configurations.
 - **Factory Pattern**: Creates different types of `Room` objects (`StandardRoom`, `DeluxeRoom`, `SuiteRoom`) based on input.
 - **DAO Pattern**: Manages booking data through file operations, abstracting data access logic into the `BookingDAO` class.

@@ -12,11 +12,16 @@ class Reception implements IReception {
         bookingDAO = new BookingDAO();
     }
 
+    private static class ReceptionHelper {
+        private static final Reception reception = new Reception();
+    }
+
     public static Reception getInstance() {
-        if (instance == null) {
-            instance = new Reception();
-        }
-        return instance;
+//        if (instance == null) {
+//            instance = new Reception();
+//        }
+//        return instance;
+        return ReceptionHelper.reception;
     }
 
     @Override
